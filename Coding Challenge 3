@@ -1,0 +1,71 @@
+let appName : String = "Teems App"
+var recommendation : String 
+var currentVersion : Double = 10.0
+var appRating : Double = 2.5
+var userReviews : [Double] = [2.5,0.5,3.5,4.5,2.1,3.4,4.9]
+
+//First we need a variable to hold the sum
+var sum: Double = 0
+var count: Double = Double(userReviews.count)
+var average : Double
+// We also need a variable to hold count of numbers
+print(count)
+
+var excellentReviews = 0
+var goodReviews = 0
+var averageReviews = 0
+var poorReviews = 0
+for number in userReviews {
+    print(number)
+    if(number >= 4.0 && number <= 5.0){
+        excellentReviews += 1
+    } else if (number >= 3.5 && number <= 5.4){
+        goodReviews += 1
+    } else if (number >= 2.5 && number <= 3.4){
+        averageReviews += 1
+    } else if (number >= 1.0 && number <= 2.4){
+        poorReviews += 1
+    }
+    //calculate sum in loop
+    sum += number
+
+}   
+print (sum)
+//calculate average based on sum using count
+average = sum / count
+
+print("Excellent Reviews: \(excellentReviews)")  
+print("Good Reviews: \(goodReviews)")  
+print("Average Reviews: \(averageReviews)")  
+print("Poor Reviews: \(poorReviews)")  
+
+print("Average: \(average)")
+
+print("My App Name is \(appName)")
+print("Current Version \(currentVersion)")
+
+currentVersion += 0.1
+print("Current Version \(currentVersion)")
+
+
+if appRating >= 4.5 {
+    
+recommendation = "Highly recommended"
+print("Highly recommended")
+}
+
+else if(appRating >= 3.5 && appRating <= 4.4){
+  recommendation = "recommended"
+print("recommended")  
+}
+else if(appRating >= 2.5 && appRating <= 4.4){
+  recommendation = "Moderately Recommended"
+print("Moderately Recommended")  
+}
+else if (appRating <= 2.5) {
+    recommendation = "Not Recommended"
+print("Not Recommended") 
+}
+else {
+print ("recommended")
+}
